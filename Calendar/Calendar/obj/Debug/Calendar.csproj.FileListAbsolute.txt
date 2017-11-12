@@ -1,0 +1,16 @@
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Calendar.dll
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Calendar.pdb
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Core.dll
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Platform.dll
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Xaml.dll
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Core.pdb
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Core.xml
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Platform.pdb
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Xaml.pdb
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\bin\Debug\Xamarin.Forms.Xaml.xml
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.csprojResolveAssemblyReference.cache
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.csproj.CoreCompileInputs.cache
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.MainPage.xaml.g.cs
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.App.xaml.g.cs
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.dll
+B:\C#\C--Binary-Search-Tree\Calendar\Calendar\Calendar\obj\Debug\Calendar.pdb
