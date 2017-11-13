@@ -4,32 +4,23 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calendar.Data_Acces_Layer;
+using DateModel;
 using DayModel;
 
 namespace Calendar.model
 {
     public static class MonthView
-    {
-        private static IEnumerable<Day>GetDayList(int year, int month)
-        {
-            return Enumerable.Range(1, DateTime.DaysInMonth(year, month)).Select(day => new Day(new DateTime(year,month,day))).ToList();
-        }
-
-      
-        public static IEnumerable<Day> GetMonthView(int year, int month)
-        {
-            //0  1  2  3  4  5  6
-            //7  8  9  10 11 12 13
-            //14 15 16 17 18 19 20
-            //21 22 23 24 25 26 27
-            //28 29 30 31 32 33 34
-            //35 36 37 38 39 40 41
+    {   
+        public static async Task<List<Day>> GetMonthView(int year, int month)
+        {          
+            var DaysInCurrentMonth = await DayList.GetDayList(year, month);
 
             Day[]ToReturn=new Day[42];
             
             int StartIndex=new Func<int>(() =>
             {
-                switch (GetDayList(year,month).First().Date.DayOfWeek)
+                switch (DaysInCurrentMonth.First().Date.DayOfWeek)
                 {
                     case DayOfWeek.Monday: return 0;
                     case DayOfWeek.Tuesday: return 1;
@@ -42,10 +33,9 @@ namespace Calendar.model
 
             }).Invoke();
 
-
+            #region Fill list up start index
             if (StartIndex == 0)
                 StartIndex = 7;
-
             if (StartIndex != 0)
             {
                 int temp_year = year;
@@ -65,12 +55,19 @@ namespace Calendar.model
                     ToReturn[i] = new Day(new DateTime(temp_year, temp_month, day));
                 }
             }
+            #endregion
 
-            foreach (var i in GetDayList(year,month))
+            #region Fill list with downloaded data
+
+            foreach (var i in DaysInCurrentMonth)
             {
                 ToReturn[StartIndex] = i;
                 StartIndex++;
             }
+
+            #endregion
+
+            #region Fill up to 41 index
             int tday = 1;
             for (int i = StartIndex; i < 42; i++)
             {
@@ -87,8 +84,9 @@ namespace Calendar.model
                 ToReturn[i]=new Day(new DateTime(temp_year,temp_month,tday)){DayValue = EventType.empty};
                 tday++;
             }
+            #endregion
 
-            return ToReturn;
+            return ToReturn.ToList();
         }
     }
 }

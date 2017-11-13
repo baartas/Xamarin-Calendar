@@ -52,7 +52,7 @@ namespace Calendar.model
             BasedOn = PrimaryButton,
             Setters =
             {
-                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#f44147")},
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#b43137")},
                 new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
 
             }
@@ -62,7 +62,7 @@ namespace Calendar.model
             BasedOn = PrimaryButton,
             Setters =
             {
-                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#4286f4")},
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#4286b4")},
                 new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
 
             }
@@ -72,7 +72,7 @@ namespace Calendar.model
             BasedOn = PrimaryButton,
             Setters =
             {
-                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#097c0b")},
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#398c3b")},
                 new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
 
             }

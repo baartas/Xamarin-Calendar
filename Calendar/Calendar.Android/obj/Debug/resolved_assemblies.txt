@@ -1,6 +1,8 @@
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Calendar.Android.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Calendar.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\FormsViewGroup.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\SQLite-net.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\SQLitePCL.raw.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Android.Support.Animated.Vector.Drawable.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Android.Support.Annotations.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Android.Support.Compat.dll
@@ -38,13 +40,13 @@ B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Runtime
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.ComponentModel.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Xml.ReaderWriter.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Reflection.dll
-B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.ObjectModel.dll
-B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Globalization.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Linq.Expressions.dll
-B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.IO.dll
-B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Threading.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Reflection.Extensions.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.ObjectModel.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Globalization.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.IO.dll
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Dynamic.Runtime.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Net.Http.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.Runtime.Serialization.dll
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\System.ServiceModel.Internals.dll

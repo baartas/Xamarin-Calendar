@@ -1,15 +1,27 @@
 ﻿using System;
 using DayModel;
+using SQLite;
 
 namespace DateModel
 { 
     public class DayEvent
     {
+  
         public DateTime Time { get; set; }
 
         public string time
         {
-            get { return $"{this.Time.Hour}:{this.Time.Minute}"; }
+            get
+            {
+                string result="";
+                if (this.Time.Hour < 10)
+                    result = "0";
+                result += $"{this.Time.Hour}:";
+                if (this.Time.Minute < 10)
+                    result += "0";
+                result += $"{this.Time.Minute}";
+                    return result;
+            }
         }
 
         public EventType Type { get; set; }

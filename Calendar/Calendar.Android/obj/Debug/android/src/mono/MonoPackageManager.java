@@ -109,6 +109,8 @@ class MonoPackageManager_Resources {
 		"Calendar.Android.dll",
 		"Calendar.dll",
 		"FormsViewGroup.dll",
+		"SQLite-net.dll",
+		"SQLitePCL.raw.dll",
 		"Xamarin.Android.Support.Animated.Vector.Drawable.dll",
 		"Xamarin.Android.Support.Annotations.dll",
 		"Xamarin.Android.Support.Compat.dll",

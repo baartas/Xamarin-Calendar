@@ -112,3 +112,7 @@ B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\FormsViewGroup
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+B:\C#\Calendar\Calendar\Calendar.Android\bin\Debug\SQLite-net.dll
+B:\C#\Calendar\Calendar\Calendar.Android\bin\Debug\SQLitePCL.raw.dll
+B:\C#\Calendar\Calendar\Calendar.Android\bin\Debug\SQLite-net.dll.mdb
+B:\C#\Calendar\Calendar\Calendar.Android\obj\Debug\android\assets\SQLite-net.dll.mdb

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Calendar.model;
 using DateModel;
 using DayModel;
+using SQLite;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -24,13 +25,12 @@ namespace Calendar
 
         private Button SelectedButton;
 
-        private void ReDrawCalendar()
+        private async void ReDrawCalendar()
         {
-            ActualMonth.Text = $"{MonthName(SelectedMonth.Month)} {SelectedMonth.Year}";
-            Days = MonthView.GetMonthView(SelectedMonth.Year, SelectedMonth.Month).ToList();
-            //Days[2]=new Day(new DateTime(2017,11,1)){Events = new List<DayEvent>() { new DayEvent() { Title = "Matematyka-Kolos", Time = new DateTime(2017, 11, 1, 23, 20, 0), Type = EventType.test }, new DayEvent() { Title = "ASD - Zadanie domowe", Time = new DateTime(2017, 11, 1, 23, 30, 0), Type = EventType.homework } }};
-
             Calendar.Children.Clear();
+            ActualMonth.Text = $"{MonthName(SelectedMonth.Month)} {SelectedMonth.Year}";
+            Days = await MonthView.GetMonthView(SelectedMonth.Year, SelectedMonth.Month);
+
             for (int i = 0; i < Days.Count(); i++)
             {
                 var button = new Button
@@ -84,7 +84,7 @@ namespace Calendar
             }
         }
 
-        public void ChangeMonth(object sender, EventArgs e)
+        public async void ChangeMonth(object sender, EventArgs e)
         {
             Button btn=sender as Button;
             if (btn.Text == "Next")
@@ -92,7 +92,8 @@ namespace Calendar
             else
                 SelectedMonth = SelectedMonth.AddMonths(-1);
 
-            
+           
+
             ReDrawCalendar();
 
         }
@@ -186,23 +187,29 @@ namespace Calendar
             #endregion
         }
 
+        public async void AddButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new AddFormPage(SelectedButton.CommandParameter as Day));
+        }
+
+  
         public MainPage()
         {
             InitializeComponent();
-            Days = MonthView.GetMonthView(DateTime.Now.Year, DateTime.Now.Month).ToList();
+            //Days = MonthView.GetMonthView(DateTime.Now.Year, DateTime.Now.Month).ToList();
             SelectedMonth = DateTime.Now;
             SelectedDay=DateTime.Now.Date;           
             SelectedButton=new Button(){CommandParameter = new Day(DateTime.Now){DayValue = EventType.empty}};
             TimeSpanLabel.Text = $"Today is {MonthName(DateTime.Now.Month)} {DateTime.Now.Day}";
             ReDrawCalendar();
-            EventsList.ItemTemplate=new DataTemplate(typeof(DefaultCell));            
-            
+            EventsList.ItemTemplate=new DataTemplate(typeof(DefaultCell));
+ 
+          
         }
 
+       
 
-        public async void AddButtonClicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync( new AddFormPage(SelectedButton.CommandParameter as Day));
-        }
+
+       
     }
 }
