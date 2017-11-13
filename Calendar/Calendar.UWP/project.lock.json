@@ -22300,12 +22300,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar.UWP\\Calendar.UWP.csproj",
+      "projectUniqueName": "B:\\C#\\Calendar\\Calendar\\Calendar.UWP\\Calendar.UWP.csproj",
       "projectName": "Calendar.UWP",
-      "projectPath": "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar.UWP\\Calendar.UWP.csproj",
-      "projectJsonPath": "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar.UWP\\project.json",
+      "projectPath": "B:\\C#\\Calendar\\Calendar\\Calendar.UWP\\Calendar.UWP.csproj",
+      "projectJsonPath": "B:\\C#\\Calendar\\Calendar\\Calendar.UWP\\project.json",
       "packagesPath": "C:\\Users\\Bartek\\.nuget\\packages\\",
-      "outputPath": "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar.UWP\\obj\\",
+      "outputPath": "B:\\C#\\Calendar\\Calendar\\Calendar.UWP\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Bartek\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -22318,8 +22318,8 @@
       "frameworks": {
         "uap10.0.10586": {
           "projectReferences": {
-            "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar\\Calendar.csproj": {
-              "projectPath": "B:\\C#\\C--Binary-Search-Tree\\Calendar\\Calendar\\Calendar\\Calendar.csproj"
+            "B:\\C#\\Calendar\\Calendar\\Calendar\\Calendar.csproj": {
+              "projectPath": "B:\\C#\\Calendar\\Calendar\\Calendar\\Calendar.csproj"
             }
           }
         }

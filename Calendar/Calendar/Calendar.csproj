@@ -44,6 +44,7 @@
     <Compile Include="model\ButtonClasses.cs" />
     <Compile Include="model\Day.cs" />
     <Compile Include="model\DayEvent.cs" />
+    <Compile Include="model\ListViewModel.cs" />
     <Compile Include="model\MonthView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

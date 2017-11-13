@@ -8,6 +8,7 @@ using Calendar.model;
 using DateModel;
 using DayModel;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
@@ -25,6 +26,10 @@ namespace Calendar
 
         private void ReDrawCalendar()
         {
+            ActualMonth.Text = $"{MonthName(SelectedMonth.Month)} {SelectedMonth.Year}";
+            Days = MonthView.GetMonthView(SelectedMonth.Year, SelectedMonth.Month).ToList();
+            //Days[2]=new Day(new DateTime(2017,11,1)){Events = new List<DayEvent>() { new DayEvent() { Title = "Matematyka-Kolos", Time = new DateTime(2017, 11, 1, 23, 20, 0), Type = EventType.test }, new DayEvent() { Title = "ASD - Zadanie domowe", Time = new DateTime(2017, 11, 1, 23, 30, 0), Type = EventType.homework } }};
+
             Calendar.Children.Clear();
             for (int i = 0; i < Days.Count(); i++)
             {
@@ -34,7 +39,15 @@ namespace Calendar
                     CommandParameter = Days[i],
                     Style = new Func<Style>(() =>
                     {
-                        if (Days[i].Date.Date == DateTime.Today)
+                        if (Days[i].Date == SelectedDay.Date)                        
+                            return ButtonClasses.SelectedDayButton;
+                        else if (Days[i].DayValue == EventType.test)
+                            return ButtonClasses.TestDayButton;
+                        else if (Days[i].DayValue == EventType.homework)
+                            return ButtonClasses.HomeworkDayButton;
+                        else if (Days[i].DayValue == EventType.other)
+                            return ButtonClasses.OtherDayButton;
+                        else if (Days[i].Date.Date == DateTime.Today)
                             return ButtonClasses.TodayButton;
                         else if (Days[i].Date.Month == SelectedMonth.Month)
                             return ButtonClasses.PrimaryButton;
@@ -43,6 +56,8 @@ namespace Calendar
                     }).Invoke()
                 };
                 button.Clicked += ButtonClicked;
+                if (button.Style == ButtonClasses.SelectedDayButton)
+                    SelectedButton = button;
 
                 Calendar.Children.Add(button, i % 7, i / 7);
 
@@ -63,7 +78,7 @@ namespace Calendar
                 case 8: { return $"August"; }
                 case 9: { return $"September"; }
                 case 10: { return $"November"; }
-                case 11: { return $"October "; }
+                case 11: { return $"October"; }
                 case 12: { return $"December"; }
                 default: return "";
             }
@@ -77,8 +92,7 @@ namespace Calendar
             else
                 SelectedMonth = SelectedMonth.AddMonths(-1);
 
-            ActualMonth.Text = $"{MonthName(SelectedMonth.Month)} {SelectedMonth.Year}";
-            Days = MonthView.GetMonthView(SelectedMonth.Year, SelectedMonth.Month).ToList();
+            
             ReDrawCalendar();
 
         }
@@ -91,20 +105,33 @@ namespace Calendar
             {
                 SelectedButton.Style =new Func<Style>(() =>
                 {
-                    if ((SelectedButton.CommandParameter as Day).Date.Date == DateTime.Now.Date)
+                    var temp=SelectedButton.CommandParameter as Day;
+                    if (temp.DayValue == EventType.test)
+                        return ButtonClasses.TestDayButton;
+                    else if (temp.DayValue == EventType.homework)
+                        return ButtonClasses.HomeworkDayButton;
+                    else if (temp.DayValue == EventType.other)
+                        return ButtonClasses.OtherDayButton;
+                    else if (temp.Date.Date == DateTime.Now.Date)
                         return ButtonClasses.TodayButton;
                     else
                         return ButtonClasses.PrimaryButton;
+                        
                 }).Invoke();
                 SelectedButton = btn;
             }
-
             btn.Style = ButtonClasses.SelectedDayButton;
 
             SelectedDay = (btn.CommandParameter as Day).Date;
 
+            #region Set EventList source
+
+            EventsList.ItemsSource = day.Events;
+
+            #endregion
+
             #region Set TimeSpanLabel property
-            
+
             if (day.Date == DateTime.Now.Date)
             {
                 TimeSpanLabel.Text = $"Today is {MonthName(DateTime.Now.Month)} {DateTime.Now.Day}";
@@ -112,40 +139,64 @@ namespace Calendar
             else if (day.Date > DateTime.Now.Date)
             {
                 
-                TimeSpanLabel.Text = new Func<string>(() =>
+                TimeSpanLabel.Text = $" {MonthName(day.Date.Month)} {day.Date.Day}, "+new Func<string>(() =>
                 {
-                    int timespan = int.Parse(Math.Round((day.Date-DateTime.Now).TotalDays).ToString());
+                    int timespan = int.Parse(Math.Round((day.Date.Date-DateTime.Now.Date).TotalDays).ToString());
                     if (timespan == 1)
                         return "Tomorrow";
                     else
-                        return $"For {timespan} days";
-                }).Invoke()+$" {MonthName(day.Date.Month)} {day.Date.Day}";
+                        return $"in {timespan} days";
+                }).Invoke();
             }
             else
             {
-                TimeSpanLabel.Text = new Func<string>(() =>
+                TimeSpanLabel.Text = $" {MonthName(day.Date.Month)} {day.Date.Day}, "+ new Func<string>(() =>
                 {
-                    int timespan = int.Parse(Math.Round((DateTime.Now-day.Date).TotalDays).ToString());
+                    int timespan = int.Parse(Math.Round((DateTime.Now.Date-day.Date.Date).TotalDays).ToString());
                     if (timespan == 1)
                         return "Yesterday";
                     else
                         return $"{timespan} days ago";
-                }).Invoke() + $" {MonthName(day.Date.Month)} {day.Date.Day}";
+                }).Invoke();
             }
             #endregion
 
+            #region Change month when other month clicked
+            if(day.Date.Month == 1 && SelectedMonth.Month == 12)
+            {
+                SelectedMonth = SelectedMonth.AddMonths(1);
+                ReDrawCalendar();
+            }
+            else if (day.Date.Month == 12 && SelectedMonth.Month == 1)
+            {
+                SelectedMonth = SelectedMonth.AddMonths(-1);
+                ReDrawCalendar();
+            }
+            else if (day.Date.Month > SelectedMonth.Month)
+            {
+                SelectedMonth=SelectedMonth.AddMonths(1);
+                ReDrawCalendar();
+            }
+            else if (day.Date.Month < SelectedMonth.Month)
+            {
+                SelectedMonth = SelectedMonth.AddMonths(-1);
+                ReDrawCalendar();
+            }
 
-
-
+            #endregion
         }
+
         public MainPage()
         {
             InitializeComponent();
             Days = MonthView.GetMonthView(DateTime.Now.Year, DateTime.Now.Month).ToList();
             SelectedMonth = DateTime.Now;
-            SelectedDay=DateTime.Now;
+            SelectedDay=DateTime.Now.Date;           
+            SelectedButton=new Button(){CommandParameter = new Day(DateTime.Now){DayValue = EventType.empty}};
+            TimeSpanLabel.Text = $"Today is {MonthName(DateTime.Now.Month)} {DateTime.Now.Day}";
             ReDrawCalendar();
-            SelectedButton=new Button(){CommandParameter = new Day(DateTime.Now)};
+            EventsList.ItemTemplate=new DataTemplate(typeof(DefaultCell));            
+            
         }
 
         

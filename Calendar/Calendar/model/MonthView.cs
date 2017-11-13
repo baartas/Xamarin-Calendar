@@ -84,7 +84,7 @@ namespace Calendar.model
                 }
 
                 
-                ToReturn[i]=new Day(new DateTime(temp_year,temp_month,tday));
+                ToReturn[i]=new Day(new DateTime(temp_year,temp_month,tday)){DayValue = EventType.empty};
                 tday++;
             }
 
