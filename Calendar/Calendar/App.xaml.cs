@@ -13,7 +13,8 @@ namespace Calendar
         {
             InitializeComponent();
 
-            MainPage = new Calendar.MainPage();
+            MainPage = new NavigationPage(new Calendar.MainPage());
+            
         }
 
         protected override void OnStart()

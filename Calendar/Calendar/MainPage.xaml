@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Calendar"
-             x:Class="Calendar.MainPage">
+             x:Class="Calendar.MainPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="DayOFTheWeek" TargetType="Label">
@@ -97,17 +98,22 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
             </Grid>
-            <AbsoluteLayout>
-                <BoxView BackgroundColor="#444" AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All"/>
-                <Label x:Name="TimeSpanLabel"
-                       BackgroundColor="#444"
-                       TextColor="#eee"
-                       AbsoluteLayout.LayoutBounds="0.5,0.5,1,1" AbsoluteLayout.LayoutFlags="All"
-                       HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
-                       HorizontalOptions="Start"
-                       Margin="20,0,0,0"
-                       />
-            </AbsoluteLayout>
+                <StackLayout Orientation="Horizontal" BackgroundColor="#444">
+
+                    <Label x:Name="TimeSpanLabel"
+                           TextColor="#eee"
+                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                           HorizontalOptions="Start"
+                           Margin="20,0,0,0"
+                           />
+                    <Button Text="Add" 
+                            HorizontalOptions="EndAndExpand"
+                            BorderRadius="0"
+                            BackgroundColor="#404040"
+                            TextColor="#eee"
+                            Clicked="AddButtonClicked"/>
+                </StackLayout>
+                 
             <ListView x:Name="EventsList">
                 
             </ListView>

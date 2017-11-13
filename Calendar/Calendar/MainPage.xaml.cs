@@ -199,6 +199,10 @@ namespace Calendar
             
         }
 
-        
+
+        public async void AddButtonClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync( new AddFormPage(SelectedButton.CommandParameter as Day));
+        }
     }
 }

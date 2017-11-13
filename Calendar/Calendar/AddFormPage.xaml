@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calendar.AddFormPage"
+             NavigationPage.HasNavigationBar="False"
+             NavigationPage.HasBackButton="False">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#555">
+            <StackLayout Padding="30,5,30,10"
+                         BackgroundColor="#333">
+                <Entry x:Name="title" 
+                       Placeholder="Title"
+                       PlaceholderColor="#ccc"
+                       TextColor="#ddd"
+                       />
+            </StackLayout >
+            <StackLayout Orientation="Horizontal"
+                             Padding="30,0,30,0">
+                    <TimePicker x:Name="timePicker"
+                                HorizontalOptions="Start"
+                                TextColor="#ccc"/>
+                    <Picker x:Name="valuepicker"
+                            Title="Event Type"
+                            HorizontalOptions="EndAndExpand"
+                            TextColor="#ccc"
+                            />
+                </StackLayout>
+            
+            <StackLayout Padding="30" VerticalOptions="FillAndExpand">
+                <Label Text="Event Details" TextColor="#ccc"/>
+                <Editor x:Name="Editor" VerticalOptions="FillAndExpand" BackgroundColor="#444"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         BackgroundColor="#222"
+                         Padding="30,10,30,10"
+                         >
+                <Button HorizontalOptions="StartAndExpand"
+                        BorderRadius="0"
+                        Text="Cancel"
+                        BackgroundColor="#333"
+                        TextColor="#ccc"
+                        Clicked="CancelClicked"/>
+                <Button HorizontalOptions="EndAndExpand"
+                        BorderRadius="0"
+                        Text="Add"
+                        BackgroundColor="#333"
+                        TextColor="#ccc"
+                        Clicked="AddEvent"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
