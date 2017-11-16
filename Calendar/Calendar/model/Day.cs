@@ -10,6 +10,7 @@ namespace DayModel
     {
         empty, homework, other, test
     }
+
     public class Day
     {
         public DateTime Date { get; set; }
@@ -24,8 +25,6 @@ namespace DayModel
             }
             set { }
         }
-
-
 
         public List<DayEvent> Events { get; set; }
 

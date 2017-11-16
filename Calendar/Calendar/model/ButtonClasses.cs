@@ -57,6 +57,16 @@ namespace Calendar.model
 
             }
         };
+        public static Style TestDayButtonClicked = new Style(typeof(Button))
+        {
+            BasedOn = PrimaryButton,
+            Setters =
+            {
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#563233")},
+                new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
+
+            }
+        };
         public static Style HomeworkDayButton = new Style(typeof(Button))
         {
             BasedOn = PrimaryButton,
@@ -67,12 +77,32 @@ namespace Calendar.model
 
             }
         };
+        public static Style HomeworkDayButtonClicked = new Style(typeof(Button))
+        {
+            BasedOn = PrimaryButton,
+            Setters =
+            {
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#364b59")},
+                new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
+
+            }
+        };
         public static Style OtherDayButton = new Style(typeof(Button))
         {
             BasedOn = PrimaryButton,
             Setters =
             {
                 new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#398c3b")},
+                new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
+
+            }
+        };
+        public static Style OtherDayButtonClicked = new Style(typeof(Button))
+        {
+            BasedOn = PrimaryButton,
+            Setters =
+            {
+                new Setter(){Property = Button.BackgroundColorProperty, Value = Color.FromHex("#273d28")},
                 new Setter(){Property = Button.BorderRadiusProperty, Value = 0}
 
             }

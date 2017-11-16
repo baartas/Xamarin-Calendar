@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Calendar.Data_Acces_Layer;
 using DateModel;
 using DayModel;
 using Xamarin.Forms;
@@ -51,6 +52,10 @@ namespace Calendar
                     }
                 }).Invoke();
                 //await DisplayAlert("DONE!", $"Title: {dayEvent.Title} Date: {dayEvent.Time.Day}" , "ok");
+
+                var context = new ConnectionContext();
+                context.AddDayEventToDB(dayEvent);
+                
                 await Navigation.PopAsync();
             }
             else

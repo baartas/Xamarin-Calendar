@@ -15,109 +15,109 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout
-            HorizontalOptions="CenterAndExpand"
-            BackgroundColor="#555"
-            >
-            <StackLayout Orientation="Horizontal"
-                         HorizontalOptions="Fill"
-                         BackgroundColor="#444"
-                          >
-                <Button Text="Back"
-                        HorizontalOptions="StartAndExpand"
-                        Clicked="ChangeMonth"
-                        BackgroundColor="#404040"
-                        BorderRadius="0"
-                        TextColor="#eee"
-                        />
-                <Label x:Name="ActualMonth"
-                       Text="October 2017"
-                       HorizontalOptions="CenterAndExpand"
-                       VerticalOptions="CenterAndExpand"
-                       TextColor="#eee"
-                       />
-                <Button Text="Next"
-                        HorizontalOptions="EndAndExpand"
-                        Clicked="ChangeMonth"
-                        BackgroundColor="#404040"
-                        BorderRadius="0"
-                        TextColor="#eee"/>
-                        
-            </StackLayout>
-            <Grid VerticalOptions="Start"
-                  ColumnSpacing="0"
-                  RowSpacing="0"
-                  Margin="10,10,10,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <Label Text="MO" Grid.Column="0" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="Tu" Grid.Column="1" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="We" Grid.Column="2" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="Th" Grid.Column="3" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="Fr" Grid.Column="4" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="Sa" Grid.Column="5" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-                <Label Text="Su" Grid.Column="6" Grid.Row="0"
-                       Style="{StaticResource DayOFTheWeek}"/>
-            </Grid>
-            <Grid Margin="10,0,10,0" x:Name="Calendar"
-                  ColumnSpacing="0"
-                  RowSpacing="0"
-                  VerticalOptions="Start"
-                  >
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                </Grid.RowDefinitions>
-            </Grid>
-                <StackLayout Orientation="Horizontal" BackgroundColor="#444">
-
-                    <Label x:Name="TimeSpanLabel"
-                           TextColor="#eee"
-                           HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
-                           HorizontalOptions="Start"
-                           Margin="20,0,0,0"
-                           />
-                    <Button Text="Add" 
-                            HorizontalOptions="EndAndExpand"
-                            BorderRadius="0"
+            <StackLayout
+                HorizontalOptions="CenterAndExpand"
+                BackgroundColor="#555"
+                >
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Fill"
+                             BackgroundColor="#444"
+                              >
+                    <Button Text="Back"
+                            HorizontalOptions="StartAndExpand"
+                            Clicked="ChangeMonth"
                             BackgroundColor="#404040"
+                            BorderRadius="0"
                             TextColor="#eee"
-                            Clicked="AddButtonClicked"/>
+                            />
+                    <Label x:Name="ActualMonth"
+                           Text="October 2017"
+                           HorizontalOptions="CenterAndExpand"
+                           VerticalOptions="CenterAndExpand"
+                           TextColor="#eee"
+                           />
+                    <Button Text="Next"
+                            HorizontalOptions="EndAndExpand"
+                            Clicked="ChangeMonth"
+                            BackgroundColor="#404040"
+                            BorderRadius="0"
+                            TextColor="#eee"/>
+                        
                 </StackLayout>
+                <Grid VerticalOptions="Start"
+                      ColumnSpacing="0"
+                      RowSpacing="0"
+                      Margin="10,10,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="MO" Grid.Column="0" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="Tu" Grid.Column="1" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="We" Grid.Column="2" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="Th" Grid.Column="3" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="Fr" Grid.Column="4" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="Sa" Grid.Column="5" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                    <Label Text="Su" Grid.Column="6" Grid.Row="0"
+                           Style="{StaticResource DayOFTheWeek}"/>
+                </Grid>
+                <Grid Margin="10,0,10,0" x:Name="Calendar"
+                      ColumnSpacing="0"
+                      RowSpacing="0"
+                      VerticalOptions="Start"
+                      >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                </Grid>
+                    <StackLayout Orientation="Horizontal" BackgroundColor="#444">
+
+                        <Label x:Name="TimeSpanLabel"
+                               TextColor="#eee"
+                               HorizontalTextAlignment="Start" VerticalTextAlignment="Center"
+                               HorizontalOptions="Start"
+                               Margin="20,0,0,0"
+                               />
+                        <Button Text="Add" 
+                                HorizontalOptions="EndAndExpand"
+                                BorderRadius="0"
+                                BackgroundColor="#404040"
+                                TextColor="#eee"
+                                Clicked="AddButtonClicked"/>
+                    </StackLayout>
                  
-            <ListView x:Name="EventsList">
+                <ListView x:Name="EventsList">
                 
-            </ListView>
-        </StackLayout>
+                </ListView>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

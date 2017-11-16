@@ -33,3 +33,5 @@ B:\C#\Calendar\Calendar\Calendar\obj\Debug\Calendar.pdb
 B:\C#\Calendar\Calendar\Calendar\obj\Debug\Calendar.AddFormPage.xaml.g.cs
 B:\C#\Calendar\Calendar\Calendar\bin\Debug\SQLite-net.dll
 B:\C#\Calendar\Calendar\Calendar\bin\Debug\SQLitePCL.raw.dll
+B:\C#\Calendar\Calendar\Calendar\bin\Debug\Newtonsoft.Json.dll
+B:\C#\Calendar\Calendar\Calendar\bin\Debug\Newtonsoft.Json.xml

@@ -14,7 +14,7 @@ namespace Calendar.model
     {   
         public static async Task<List<Day>> GetMonthView(int year, int month)
         {          
-            var DaysInCurrentMonth = await DayList.GetDayList(year, month);
+            var DaysInCurrentMonth = await DayList.GetDayListAsync(year, month);
 
             Day[]ToReturn=new Day[42];
             

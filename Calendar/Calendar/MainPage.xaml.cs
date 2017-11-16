@@ -25,7 +25,7 @@ namespace Calendar
 
         private Button SelectedButton;
 
-        private async void ReDrawCalendar()
+        public async void ReDrawCalendar()
         {
             Calendar.Children.Clear();
             ActualMonth.Text = $"{MonthName(SelectedMonth.Month)} {SelectedMonth.Year}";
@@ -121,7 +121,22 @@ namespace Calendar
                 }).Invoke();
                 SelectedButton = btn;
             }
-            btn.Style = ButtonClasses.SelectedDayButton;
+
+            //btn.Style = ButtonClasses.SelectedDayButton;
+            btn.Style=new Func<Style>(() =>
+            {
+                
+                if (btn.Style == ButtonClasses.TestDayButton)
+                    return ButtonClasses.TestDayButtonClicked;
+                else if (btn.Style == ButtonClasses.OtherDayButton)
+                    return ButtonClasses.OtherDayButtonClicked;
+                else if (btn.Style == ButtonClasses.HomeworkDayButton)
+                    return ButtonClasses.HomeworkDayButtonClicked;
+                else
+                    return ButtonClasses.SelectedDayButton;
+
+
+            }).Invoke();
 
             SelectedDay = (btn.CommandParameter as Day).Date;
 
@@ -192,7 +207,8 @@ namespace Calendar
             await Navigation.PushAsync(new AddFormPage(SelectedButton.CommandParameter as Day));
         }
 
-  
+        
+
         public MainPage()
         {
             InitializeComponent();
@@ -206,10 +222,6 @@ namespace Calendar
  
           
         }
-
-       
-
-
-       
+        
     }
 }
